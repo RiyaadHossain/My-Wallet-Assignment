@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Wallet</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <!-- Main Content -->
+    <h1>My Wallet</h1>
+    <main class="main-flex container">
+      <!-- ============= Left Content: Image ============= -->
+      <section id="left-picture">
+        <div>
+          <img src="./Image/my-wallet.jpg" alt="" />
+        </div>
+      </section>
+
+      <!-- ============= Right Content: Calculation ============= -->
+      <section id="right-calc">
+        <div>
+          <!-- Income Section -->
+          <h3>Income</h3>
+          <div class="flex m-15">
+            <p class="mr-15">Income:</p>
+            <input id="income-input" class="input-field" type="text" />
+          </div>
+
+          <!-- Expenses Section -->
+          <h3>Espenses</h3>
+          <div class="flex m-15">
+            <p>Food:</p>
+            <input id="food-input" class="input-field" type="text" />
+          </div>
+          <div class="flex m-15">
+            <p>Rent:</p>
+            <input id="rent-input" class="input-field" type="text" />
+          </div>
+          <div class="flex m-15">
+            <p>Clothes:</p>
+            <input id="cloth-input" class="input-field" type="text" />
+          </div>
+
+          <!-- Calculate Button -->
+          <button class="btn text-center block" onclick="calculate()">Calculate</button>
+
+          <!-- Display Expenses & Balance -->
+          <h4>Total Expenses: <span id="display-expense">0000</span></h4>
+          <h4>Balance: <span id="display-balance">0000</span></h4>
+
+          <!-- Savings Section -->
+          <div class="flex m-15 saving">
+            <p class="save-p">Save:</p>
+            <input class="input-field saving-input" id="saving-input" type="text" />
+            <span class="parsent">%</span>
+
+            <!-- Save Button -->
+            <button class="btn" onclick="save()">Save</button>
+          </div>
+          <h4>Saving Amount: <span id="display-saving">0000</span></h4>
+          <h4>Remaining Balance: <span id="display-remaining">0000</span></h4>
+        </div>
+      </section>
+    </main>
+
+    <!-- Link JS -->
+    <script src="./JS/app.js"></script>
+  </body>
+</html>
