@@ -14,6 +14,11 @@ const saving_Display = document.querySelector("#display-saving");
 const remaining_Display = document.querySelector("#display-remaining");
 
 /* ============= Common Function ============= */
+function minus(num1, num2){
+  let Result = num1 - num2;
+  return Result;
+}
+
 
 /* ============= Calculate Function ============= */
 function calculate() {
@@ -23,7 +28,8 @@ function calculate() {
     parseFloat(rent_Input.value) +
     parseFloat(cloth_Input.value);
   // Get Balance
-  let balance = parseFloat(income_Input.value) - expense;
+  
+  let balance = minus(parseFloat(income_Input.value), expense);
   if (
     isNaN(income_Input.value) ||
     isNaN(food_Input.value) ||
@@ -62,7 +68,8 @@ function save() {
   } else {
     const balance = parseFloat(balance_Display.innerText);
     let saved = balance * (parseFloat(saving_Input.value) / 100);
-    let remained = balance - parseFloat(saved);
+    
+    let remained = minus(balance, parseFloat(saved));
     if (
       parseFloat(remained) < 0) {
       alert("You cannot save more than your balance :'( ");
