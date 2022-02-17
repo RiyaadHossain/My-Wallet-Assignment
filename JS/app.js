@@ -66,10 +66,11 @@ function save() {
   } else if (parseFloat(saving_Input.value) < 0) {
     alert("Please input positive number :( ");
   } else {
-    const balance = parseFloat(balance_Display.innerText);
-    let saved = balance * (parseFloat(saving_Input.value) / 100);
+    const IncomeTK = parseFloat(document.getElementById("income-input").value);
+    const balance1 = parseInt(document.getElementById("display-balance").innerText)
+    let saved = IncomeTK * (parseFloat(saving_Input.value) / 100);
     
-    let remained = minus(balance, parseFloat(saved));
+    let remained = minus(balance1, parseFloat(saved));
     if (
       parseFloat(remained) < 0) {
       alert("You cannot save more than your balance :'( ");
